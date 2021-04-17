@@ -1,0 +1,68 @@
+{{>header}}
+
+<div class="container-fluid bg-light py-2 my-3">
+    
+    <form action="connection" method="POST">
+        <div class="container">
+        <h4 class="col-md-12 col-12 text-center font-weight-bold">Choose Convert Method</h4>
+       <ul class="col-md-12 "> 
+    <li><input type="radio" onchange="onch(event)" name="conversionmethod" value="phptomongo" checked/> <label>Php-to-Mongodb</label></li>
+    <li><input type="radio" name="conversionmethod" onchange="onch(event)" value="mongotophp"/> <label>Mongodb-to-Php</label></li>
+       </ul>
+    </div>
+    <div class="container" id="phpPrimaryKeyOptionDiv">
+        <h4 style="text-align:center">What should be the primary key </h4>
+        <ul>
+            <li><input type="radio" name="phpPrimaryKeyOptions" value="true" checked/> Create auto Field with unique property which will generate new object id<span style="color:red"> (NOTE: if you insert data in these table than your id field will automaticaly generate new and unique id and also your primary key of mysql table will be converted temp field"</span></li>
+            <li><input type="radio" name="phpPrimaryKeyOptions" value="false"/> keep the php primary key field as the id field <span style="color:red">(NOTE: if you insert data in these table than you need to customly fill the id field) </span> </li>
+        </ul>
+    </div>
+    <div class="row "><div class="container m-auto w-60">
+    <h1 class="col-md-12 col-12 text-center">Php Details</h1>
+   <label class="col-md-3 m-2">host name</label> <input type="text"  width="200px" name="phphostname" />
+   <label class="col-md-3 m-2">database name</label> <input type="text"  width="200px" name="phpdatabasename" />
+   <label class="col-md-3 m-2">user</label> <input type="text"  width="200px" name="phpuser" />
+   <label class="col-md-3 m-2">password</label> <input type="text"  width="200px" name="phppassword" />
+  <label class="col-md-3 m-2">Port</label> <input type="text"  width="200px" name="phpport" />
+   <div class="col-md-12 col-12" id="phpTableSection" style="display:block;">
+    <h1  class="col-md-12 text-center">Select table option</h1>
+    <ul>
+        <li><input type="radio" name="phpselecttable" value="phpConvertAllTable" onchange="tableonchange(event)" checked/><label>Convert all table</label></li>
+        <li><input type="radio" name="phpselecttable" value="phpConvertOnly" onchange="tableonchange(event)" /><label>only specific table</label></li>
+    </ul>
+    <textarea  class="col-md-8" name="phptablenames" id="textFieldPhp" style="display: none;" placeholder="table names seprated with ',' coma"></textarea>
+   </div>
+   </div>
+    </div>
+    <div class="container" id="mongoPrimaryKeyOptionDiv" style="display: none;">
+        <h4 style="text-align:center">What should be the primary key </h4>
+        <ul>
+            <li><input type="radio" name="mongoPrimaryKeyOptions" value="true" checked/> Create auto field with unique property<span style="color:red"> (NOTE: if you insert data in these table than your id field will automaticaly generate new and unique id and the mpngodb id field will convert to temp field</span></li>
+            <li><input type="radio" name="mongoPrimaryKeyOptions" value="false"/> keep the mongodb id field as id field of mysql<span style="color:red">(NOTE: if you insert data in these table than you need to customly fill the id field) </span> </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="container m-auto w-60">
+        <h1 class="col-md-12 col-12 text-center">Mongodb Details</h1>
+        <label class="col-md-3 m-2">host name</label> <input type="text"  width="200px" name="mongohostname" />
+   <label class="col-md-3 m-2">database name</label> <input type="text"  width="200px" name="mongodatabasename" />
+   <label class="col-md-3 m-2">user</label> <input type="text"  width="200px" name="mongouser" />
+   <label class="col-md-3 m-2">password</label> <input type="text"  width="200px" name="mongopassword" />
+   <label class="col-md-3 m-2">Port</label> <input type="text"  width="200px" name="mongoport" />
+    <div class="col-md-12 col-12" id="mongoTableSection" style="display:none;">
+    <h1 class="col-md-12 text-center" >Select table option</h1>
+    <ul>
+        <li><input type="radio" name="mongoselecttable" value="mongoConvertAllTable" onchange="tableonchange(event)" checked/><label>Convert all table</label></li>
+        <li><input type="radio" name="mongoselecttable" value="mongoConvertOnly" onchange="tableonchange(event)"/><label>only specific table</label></li>
+    </ul>
+    <textarea  class="col-md-8" name="mongotablenames" id="textFieldMongo" style="display: none;" placeholder="table names seprated with ',' coma"></textarea>
+   </div>
+    </div>
+    </div>
+    <button class="col-md-12 col-12 my-3 btn btn-warning" type="submit" >submit</button>
+    </form>
+</div>
+
+
+<script src="./js/homefooter.js"></script>
+{{>footer}}

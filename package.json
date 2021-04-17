@@ -1,0 +1,25 @@
+{
+  "name": "api_for_msqltomongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js -e js,hbs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supercharge/request-ip": "^1.1.2",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "ip": "^1.1.5",
+    "key-events": "^0.1.1",
+    "local-ip": "^2.0.0",
+    "mongoose": "^5.11.15",
+    "mysql": "^2.18.1",
+    "os": "^0.1.1",
+    "xev-emitter": "0.0.1"
+  }
+}
