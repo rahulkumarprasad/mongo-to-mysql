@@ -84,10 +84,10 @@ res.send(" the id passed is "+req.params.id)
 });
 
 router.get("/requirments",(req,res) =>{
-   console.log(networkInterfaces);
-   let key=Object.keys(networkInterfaces);
-   ip=networkInterfaces[key[1]].address+" or "+(key[2]!=null)?networkInterfaces[key[2]][0].address:"nothing";
-   res.render("requirments.hbs",{ title: 'foo' ,path:false,ip:ip});
+   // console.log(networkInterfaces);
+   // let key=Object.keys(networkInterfaces);
+   // ip=networkInterfaces[key[1]].address+" or "+(key[2]!=null)?networkInterfaces[key[2]][0].address:"nothing";
+   res.render("requirments.hbs",{ title: 'foo' ,path:false,ip:"not available"});
 });
 
 module.exports=router;
